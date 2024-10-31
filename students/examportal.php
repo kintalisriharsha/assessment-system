@@ -286,6 +286,7 @@ while ($rowd = mysqli_fetch_array($res)) {
     document.addEventListener('DOMContentLoaded', function() {
       showModal();
       const startFullScreenBtn = document.getElementById('startFullScreenBtn');
+      let tabSwitchCount = 0;
       startFullScreenBtn.addEventListener('click', function() {
 
         enterFullScreen();
@@ -315,7 +316,15 @@ while ($rowd = mysqli_fetch_array($res)) {
       document.addEventListener('visibilitychange', function() {
         if (document.visibilityState === 'hidden') {
           showModal();
+          if (tabSwitchCount > 2) {
+          alert("You have switched tabs more than 2 times. Submitting the exam automatically");
+          document.getElementById('form1').submit();
+        }
+        else{
+          showModal();
           startFullScreenBtn.textContent = "Please Enter into Full screen";
+        }
+          tabSwitchCount++;
         }
       });
 
