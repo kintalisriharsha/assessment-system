@@ -92,10 +92,6 @@ if (!isset($_SESSION["fname"])){
           <p>Ans: Navigate to the exams tab by clicking on the exams button from the left navigation bar. Tests can be attempted from here.</p><br>
           <h4>Q5. How to view annoucements ?</h4>
           <p>Ans: Click on the messages option from the left navigation bar.</p><br>
-         
-          <div class="credits">
-            <span class="text" style="text-align: center;">Made <❤️> by Azim Krishna<br>Contact me on: azimbaji19@gmail.com </span>
-          </div>
         </div>
       </div>
     </div>

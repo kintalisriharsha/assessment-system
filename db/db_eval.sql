@@ -145,6 +145,55 @@ INSERT INTO `teacher` (`id`, `uname`, `pword`, `fname`, `dob`, `gender`, `email`
 (1, 'teacher', '8d788385431273d11e8b43bb78f3aa41', 'Jack Rosso', '2021-12-01', 'M', 'teacher@teach.com', 'CHEMISTRY'),
 (2, 'teacher2', 'ccffb0bb993eeb79059b31e1611ec353', 'Rosey', '2021-12-01', 'F', 'teacher@gmail.com', 'BIOLOGY');
 
+CREATE TABLE `ADMIN` (`id` INT NOT NULL PRIMARY KEY, `uname` NOT NULL VARCHAR(255), `pword` NOT NULL VARCHAR(255), `fname` NOT NULL VARCHAR(255), `dob` NOT NULL DATE, `gender` NOT NULL VARCHAR(1), `email` NOT NULL VARCHAR(255)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO ADMIN (`id`, `uname`, `pword`, `fname`, `dob`, `gender`, `email`) VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', '2021-12-01', 'M', 'admin@gmail.com');
+
+-- Table structure for table `report_templates`
+CREATE TABLE `report_templates` (
+  `id` int(11) NOT NULL,
+  `template_name` varchar(100) NOT NULL,
+  `metrics` text NOT NULL,
+  `filters` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table structure for table `analytics_data`
+CREATE TABLE `analytics_data` (
+  `id` int(11) NOT NULL,
+  `metric_name` varchar(100) NOT NULL,
+  `value` varchar(100) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table structure for table `comparison_data`
+CREATE TABLE `comparison_data` (
+  `id` int(11) NOT NULL,
+  `metric_name` varchar(100) NOT NULL,
+  `value1` varchar(100) NOT NULL,
+  `value2` varchar(100) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Indexes for dumped tables
+ALTER TABLE `report_templates`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `analytics_data`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `comparison_data`
+  ADD PRIMARY KEY (`id`);
+
+-- AUTO_INCREMENT for dumped tables
+ALTER TABLE `report_templates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `analytics_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `comparison_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Indexes for dumped tables
 --
